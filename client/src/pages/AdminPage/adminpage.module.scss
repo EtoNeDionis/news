@@ -1,0 +1,23 @@
+.adminpage{
+  max-width: 80vw;
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  .container_category{
+
+  }
+
+  form{
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+
+    textarea{
+      resize: none;
+      width: 300px;
+      height: 150px;
+    }
+  }
+}

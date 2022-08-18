@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+:root{
+  --bg-color-first: #264653;
+  --bg-color-second: #b4a9a9;
+  --bg-color-third: #e9c46a;
+  --text-color-second: #f4a261;
+  --text-color-first: #e76f51;
+}
+
+html{
+  overflow-y: scroll; //чтобы скролл бар не влиял на ширину
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  max-width: 1000px;
+  margin: 0 auto;
+  font-family: 'Inter', sans-serif;
+  color: var(--text-color-first);
+}
+
+::-webkit-scrollbar {
+  width: 0.4rem;
+  position: fixed;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--text-color-first);
+}

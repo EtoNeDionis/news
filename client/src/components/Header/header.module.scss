@@ -1,0 +1,79 @@
+header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+  padding: 0.7rem 0;
+  max-width: 80vw;
+
+  border-bottom: 1px solid rgba(0,0,0, 0.1);
+  .logo{
+    width: 1.75rem;
+    height: 1.75rem;
+    filter: invert(62%) sepia(62%) saturate(3402%) hue-rotate(329deg) brightness(97%) contrast(85%);
+    cursor: pointer;
+    transition: all 0.1s;
+
+    &:hover{
+      filter:invert(68%) sepia(62%) saturate(512%) hue-rotate(330deg) brightness(100%) contrast(92%);
+    }
+  }
+
+  .admin{
+    text-decoration: none;
+    padding: .4rem 0.5rem;
+    border-radius: 1rem;
+    box-shadow: 0 0 1rem rgba(0,0,0,0.1);
+    &:hover{
+      color: var(--text-color-second)
+    }
+  }
+
+  .container{
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    .btn_logout{
+      border-radius: 0.5rem;
+      border: 1px solid var(--text-color-first);
+      padding: 5px 10px;
+      text-decoration: none;
+      transition: all 0.2s;
+      cursor: pointer;
+      &:hover{
+        color: white;
+        background-color: var(--text-color-first);
+      }
+    }
+  }
+
+  .buttons{
+    display: flex;
+    gap: 1rem;
+    .btn_login{
+      border-radius: 0.5rem;
+      border: 1px solid var(--text-color-first);
+      padding: 5px 10px;
+      text-decoration: none;
+      transition: all 0.2s;
+
+      &:hover{
+        color: white;
+        background-color: var(--text-color-first);
+      }
+    }
+
+    .btn_signup{
+      color: white;
+      background-color: var(--text-color-first);
+      border-radius: 0.5rem;
+      padding: 5px 10px;
+      text-decoration: none;
+      transition: all 0.2s;
+
+      &:hover{
+        background-color: #cc4521;
+      }
+    }
+  }
+}
