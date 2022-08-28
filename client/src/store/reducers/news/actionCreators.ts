@@ -8,7 +8,7 @@ export const fetchNews = () => async (dispatch: AppDispatch) => {
     try {
         dispatch(newsFetching())
         const response = await $authHost.get<INews[]>('/news')
-        console.log(response.data.sort((elem1, elem2) => elem2.id - elem1.id))
+        response.data.sort((elem1, elem2) => elem2.id - elem1.id)
         dispatch(newsFetchingSuccess(response.data))
     } catch (e) {
         if (e instanceof Error) dispatch(newsFetchingError(e.message))

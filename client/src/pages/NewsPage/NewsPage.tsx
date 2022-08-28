@@ -5,6 +5,7 @@ import {useAppDispatch, useAppSelector} from "../../hooks/useTypedSelector";
 import {INews} from "../../models/INews";
 import styles from './newspage.module.scss'
 import {setRating} from "../../http/rating";
+import ReactMarkdown from "react-markdown";
 
 const NewsPage = () => {
     const {id} = useParams()
@@ -30,13 +31,13 @@ const NewsPage = () => {
         <div className={styles.newspage}>
             <h1>{news?.title}</h1>
             <h2>{news?.info}</h2>
-            <div>{news?.content}</div>
+            <ReactMarkdown children={news?.content || ''}/>
+            {isRated && <div>Спасибо за голос</div>}
             <div className={styles.rating_container}>
                 <button disabled={isRated} onClick={handlePlus} className={styles.btn__plus}>+</button>
                 <div className={styles.rating}>{news?.rating}</div>
                 <button disabled={isRated} onClick={handleMinus} className={styles.btn__minus}>-</button>
             </div>
-            {isRated && <div>Спасибо за голос</div>}
         </div>
     );
 };
