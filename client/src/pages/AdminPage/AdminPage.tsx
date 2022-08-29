@@ -3,6 +3,9 @@ import styles from './adminpage.module.scss'
 import {useAppDispatch, useAppSelector} from "../../hooks/useTypedSelector";
 import {fetchCategories} from "../../store/reducers/category/actionCreators";
 import {createNews} from "../../http/createNews";
+import SimpleMde from 'react-simplemde-editor'
+import "easymde/dist/easymde.min.css";
+import {createCategory} from "../../http/createCategory";
 
 const AdminPage = () => {
     const [category, setCategory] = useState<string>('')
@@ -19,7 +22,7 @@ const AdminPage = () => {
     }, [])
 
     const submitCategory = () => {
-        // createCategory(category)
+        createCategory(category)
         setCategory('')
     }
 
@@ -41,6 +44,20 @@ const AdminPage = () => {
         setImg(e.target.files[0])
     }
 
+    const options = React.useMemo(
+        () => ({
+            spellChecker: false,
+            maxHeight: '400px',
+            autofocus: true,
+            placeholder: 'Введите текст...',
+            status: false,
+            autosave: {
+                enabled: true,
+                delay: 1000,
+            },
+        }),
+        [],
+    );
 
     return (
         <div className={styles.adminpage}>
@@ -51,7 +68,9 @@ const AdminPage = () => {
             </div>
             <form>
                 <input type={"text"} placeholder={'title'} value={title} onChange={(e) => setTitle(e.target.value)}/>
-                <textarea value={content} onChange={(e) => setContent(e.target.value)} rows={50} placeholder={'content'}/>
+                {/*<textarea value={content} onChange={(e) => setContent(e.target.value)} rows={50} placeholder={'content'}/>*/}
+                <SimpleMde value={content} onChange={(e) => setContent(e)}/>
+
                 <input type={"text"} value={info} placeholder={'info'} onChange={(e) => setInfo(e.target.value)}/>
                 <select value={newsCategory} onChange={(e) => setNewsCategory(e.target.value)} placeholder={'category'} name={'category'}>
                     {categories.map(category => (

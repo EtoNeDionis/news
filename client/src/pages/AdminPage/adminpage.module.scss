@@ -12,12 +12,7 @@
   form{
     margin-top: 2rem;
     display: flex;
+    gap: .5rem;
     flex-direction: column;
-
-    textarea{
-      resize: none;
-      width: 300px;
-      height: 150px;
-    }
   }
 }
